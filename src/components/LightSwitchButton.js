@@ -1,11 +1,6 @@
-import { useState } from 'react';
-
-export default function LightSwitchButton() {
-	const [ light, setLight ] = useState('off');
-	const handleClick = () => setLight(light === 'on' ? 'off' : 'on');
-
+export default function LightSwitchButton({ light, switchLight }) {
 	return (
-		<button className="LightSwitchButton" onClick={handleClick}>
+		<button className="LightSwitchButton" onClick={switchLight}>
 			{light === 'on' && (
 				<span className="on">
 					<i>💡</i> I'm on!
